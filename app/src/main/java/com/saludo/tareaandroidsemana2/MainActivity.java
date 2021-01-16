@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    
+
     private EditText txtNombre;
     private EditText txtFechaNac;
     private EditText txtTelefono;
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         txtEmail = (EditText)findViewById(R.id.txtEmail);
         txtContacto = (EditText)findViewById(R.id.txtContacto);
 
+        mostrarDatos();
+
     }
 
     public void mostrarSiguiente(View view) {
@@ -47,18 +49,39 @@ public class MainActivity extends AppCompatActivity {
 
     public void mostrarFecha(View view) {
         final Calendar cldr = Calendar.getInstance();
-        int day = cldr.get(Calendar.DAY_OF_MONTH);
-        int month = cldr.get(Calendar.MONTH);
-        int year = cldr.get(Calendar.YEAR);
+        int dia = cldr.get(Calendar.DAY_OF_MONTH);
+        int mes = cldr.get(Calendar.MONTH);
+        int ano = cldr.get(Calendar.YEAR);
         DatePickerDialog picker = new DatePickerDialog(MainActivity.this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        txtFechaNac.setText(i2 + "/" + (i1 + 1) + "/" + i);
+                    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
+                        txtFechaNac.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
 
-                }, year, month, day);
+                }, ano, mes, dia);
         picker.show();
+    }
+
+    public void mostrarDatos(){
+
+        Bundle parametros = this.getIntent().getExtras();
+
+        if (parametros != null){
+
+            String nombre = parametros.getString("nombre");
+            String fechanac = parametros.getString("fechanac");
+            String telefono = parametros.getString("telefono");
+            String email = parametros.getString("email");
+            String contacto = parametros.getString("contacto");
+
+            txtNombre.setText(nombre);
+            txtFechaNac.setText(fechanac);
+            txtTelefono.setText(telefono);
+            txtEmail.setText(email);
+            txtContacto.setText(contacto);
+
+        }
     }
 
 }

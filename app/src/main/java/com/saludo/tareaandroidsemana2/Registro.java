@@ -21,18 +21,18 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        txtNombre1 = (TextView)findViewById(R.id.txtNombre1);
+        txtFechaNac1 = (TextView)findViewById(R.id.txtFechaNac1);
+        txtTelefono1 = (TextView)findViewById(R.id.txtTelefono1);
+        txtEmail1 = (TextView)findViewById(R.id.txtEmail1);
+        txtContacto1 = (TextView)findViewById(R.id.txtContacto1);
+
         Bundle parametros = getIntent().getExtras();
         String nombre = parametros.getString("nombre");
         String fechanac = parametros.getString("fechanac");
         String telefono = parametros.getString("telefono");
         String email = parametros.getString("email");
         String contacto = parametros.getString("contacto");
-
-        txtNombre1 = (TextView)findViewById(R.id.txtNombre1);
-        txtFechaNac1 = (TextView)findViewById(R.id.txtFechaNac1);
-        txtTelefono1 = (TextView)findViewById(R.id.txtTelefono1);
-        txtEmail1 = (TextView)findViewById(R.id.txtEmail1);
-        txtContacto1 = (TextView)findViewById(R.id.txtContacto1);
 
         txtNombre1.setText(nombre);
         txtFechaNac1.setText(fechanac);
@@ -42,8 +42,14 @@ public class Registro extends AppCompatActivity {
 
     }
 
-    public void mostrarDatos(View view) {
-        onBackPressed();
+    public void editarDatos(View view) {
+        Intent intent = new Intent(Registro.this, MainActivity.class);
+        intent.putExtra("nombre", txtNombre1.getText().toString());
+        intent.putExtra("fechanac", txtFechaNac1.getText().toString());
+        intent.putExtra("telefono", txtTelefono1.getText().toString());
+        intent.putExtra("email", txtEmail1.getText().toString());
+        intent.putExtra("contacto", txtContacto1.getText().toString());
+        startActivity(intent);
     }
 
 }
