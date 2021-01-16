@@ -43,6 +43,7 @@ public class Registro extends AppCompatActivity {
     }
 
     public void editarDatos(View view) {
+
         Intent intent = new Intent(Registro.this, MainActivity.class);
         intent.putExtra("nombre", txtNombre1.getText().toString());
         intent.putExtra("fechanac", txtFechaNac1.getText().toString());
@@ -50,6 +51,7 @@ public class Registro extends AppCompatActivity {
         intent.putExtra("email", txtEmail1.getText().toString());
         intent.putExtra("contacto", txtContacto1.getText().toString());
         startActivity(intent);
+        
     }
 
 }
