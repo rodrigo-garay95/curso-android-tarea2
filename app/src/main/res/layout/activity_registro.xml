@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/left"
+    android:paddingRight="@dimen/right"
+    tools:context=".Registro">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top1">
+
+        <TextView
+            android:id="@+id/etiTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_titulo"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tituloConfirmar"
+            />
+
+        <TextView
+            android:id="@+id/etiTitulo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top1"
+            />
+
+        <TextView
+            android:id="@+id/etiNombre1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/right"
+            android:layout_below="@+id/etiTitulo1"
+            android:textSize="@dimen/text_detalle"
+            android:text="@string/nombre1"
+            />
+
+        <TextView
+            android:id="@+id/txtNombre1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etiTitulo1"
+            android:layout_toRightOf="@+id/etiNombre1"
+            android:textSize="@dimen/text_detalle"
+            />
+
+        <TextView
+            android:id="@+id/etiFechaNac1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/right"
+            android:layout_below="@+id/etiNombre1"
+            android:textSize="@dimen/text_detalle"
+            android:text="@string/fechaNac1"
+            />
+
+        <TextView
+            android:id="@+id/txtFechaNac1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNombre1"
+            android:layout_toRightOf="@+id/etiFechaNac1"
+            android:textSize="@dimen/text_detalle"
+            />
+
+        <TextView
+            android:id="@+id/etiTelefono1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/right"
+            android:layout_below="@+id/etiFechaNac1"
+            android:textSize="@dimen/text_detalle"
+            android:text="@string/telefono1"
+            />
+
+        <TextView
+            android:id="@+id/txtTelefono1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFechaNac1"
+            android:layout_toRightOf="@+id/etiTelefono1"
+            android:textSize="@dimen/text_detalle"
+            />
+
+        <TextView
+            android:id="@+id/etiEmail1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/right"
+            android:layout_below="@+id/etiTelefono1"
+            android:textSize="@dimen/text_detalle"
+            android:text="@string/email1"
+            />
+
+        <TextView
+            android:id="@+id/txtEmail1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTelefono1"
+            android:layout_toRightOf="@+id/etiEmail1"
+            android:textSize="@dimen/text_detalle"
+            />
+
+        <TextView
+            android:id="@+id/etiContacto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/right"
+            android:layout_below="@+id/etiEmail1"
+            android:textSize="@dimen/text_detalle"
+            android:text="@string/descripContacto1"
+            />
+
+        <TextView
+            android:id="@+id/txtContacto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEmail1"
+            android:layout_toRightOf="@+id/etiContacto1"
+            android:textSize="@dimen/text_detalle"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nombreBotonEditar"
+            android:onClick="mostrarDatos"
+            android:layout_marginTop="@dimen/top1"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
